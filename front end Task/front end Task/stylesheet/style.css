@@ -1,0 +1,255 @@
+
+:root {
+    --bg: #f4f4f4;
+    --text: #222;
+    --card: #fff;
+    --main: #2196F3;
+}
+
+/* Basic Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Navigation */
+header {
+    background: var(--card);
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 22px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text);
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--main);
+}
+
+/* Animated Theme Button */
+.animated-button {
+    position: relative;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 100px;
+    background: #222;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.animated-button span:first-child {
+    position: relative;
+    z-index: 1;
+}
+
+.animated-button span:last-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #2196F3;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 0.8s;
+}
+
+.animated-button:hover {
+    box-shadow: 0 0 0 5px #2195f360;
+}
+
+.animated-button:hover span:last-child {
+    width: 150px;
+    height: 150px;
+    opacity: 1;
+}
+
+.animated-button:active {
+    transform: scale(0.95);
+}
+
+/* Profile Section */
+.profile {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.profile img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 18px;
+}
+
+.profile h2 {
+    margin-bottom: 10px;
+}
+
+.profile p {
+    color: #777;
+    line-height: 1.6;
+}
+
+/* Information Cards */
+.cards {
+    display: flex;
+    gap: 20px;
+    padding: 25px 8%;
+}
+
+.card {
+    flex: 1;
+    padding: 25px;
+    background: var(--card);
+    border-radius: 6px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--main);
+    margin-bottom: 12px;
+}
+
+.card p {
+    line-height: 1.6;
+}
+
+/* Contact Area */
+.contact {
+    max-width: 450px;
+    margin: 30px auto;
+    padding: 25px;
+    background: var(--card);
+    border-radius: 8px;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: var(--card);
+    color: var(--text);
+    font-size: 14px;
+}
+
+input:focus {
+    outline: 1px solid var(--main);
+}
+
+form button {
+    padding: 12px;
+    margin-top: 8px;
+    background: var(--main);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+form button:hover {
+    opacity: 0.85;
+}
+
+/* Page Footer */
+footer {
+    text-align: center;
+    padding: 18px;
+    margin-top: 30px;
+    background: var(--card);
+}
+
+/* Dark Theme */
+body.dark {
+    --bg: #181818;
+    --text: #fff;
+    --card: #292929;
+    --main: #64b5f6;
+}
+
+body.dark .profile p {
+    color: #ccc;
+}
+
+body.dark input {
+    border-color: #555;
+}
+
+body.dark .animated-button {
+    background: #2196F3;
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+        text-align: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .contact {
+        margin: 25px 20px;
+    }
+}
